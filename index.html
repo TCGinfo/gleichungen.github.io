@@ -4,7 +4,130 @@
 <meta charset="UTF-8">
 <title>Lernpfad Quadratische Gleichungen</title>
 <style>
-body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#4facfe,#00f2fe);min-height:100vh;margin:0;display:flex;justify-content:center;align-items:center}.card{background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.2);width:980px;display:flex;gap:20px}.levelNav{width:150px;background:#f7f7f7;border-radius:12px;padding:12px;font-size:14px}.levelNav h4{margin:0 0 10px 0}.levelItem{background:white;border-radius:9px;padding:9px;margin:7px 0;cursor:pointer;box-shadow:0 2px 5px rgba(0,0,0,.12);font-weight:600}.levelItem:hover{background:#eef7ff;transform:scale(1.02)}.levelItem.active{background:#d7ecff;border:2px solid #1e88e5}.levelItem.done::after{content:' ✓';color:#1b5e20;font-weight:bold}.left{flex:2}.right{flex:1;background:#f7f7f7;padding:12px;border-radius:12px;font-size:14px;display:none}.progress{height:10px;background:#eee;border-radius:10px;margin-bottom:15px;overflow:hidden}.progress-bar{height:100%;background:#4CAF50;width:0%;transition:width .3s}.math{font-family:monospace;background:#f7f7f7;padding:12px;border-radius:10px;margin-bottom:10px;line-height:1.8}.eqline{display:flex;justify-content:space-between;gap:18px}.operation{color:#555;white-space:nowrap}.prompt{font-weight:bold;margin:10px 0 8px}.sqrtExpression{display:inline-flex;align-items:flex-start;gap:3px;vertical-align:middle}.sqrtSymbol{font-size:2.2em;line-height:.85;transform:scaleY(1.25);display:inline-block}.sqrtRadicand{border-top:2px solid #333;padding:4px 8px 0;display:inline-block;min-height:1.4em}button{width:100%;margin:6px 0;padding:11px;border:none;border-radius:10px;cursor:pointer;font-size:15px;transition:.15s}button:hover{transform:scale(1.02)}.restart,.darkBtn{background:#333;color:white}.feedback{color:#c62828;font-weight:bold;margin-top:10px}.inputArea{background:#fff8e1;padding:12px;border-radius:10px;margin-top:10px}input{box-sizing:border-box;width:100%;padding:9px;border:1px solid #ccc;border-radius:8px;margin:6px 0}.descItem{margin:8px 0}.smallHint{color:#666;font-size:13px}.finishBig{font-size:30px;font-weight:bold;text-align:center;margin:18px 0;color:#1b5e20}.worksheet{background:#fff;padding:14px;border-radius:14px}.worksheetTitle{font-size:24px;margin-bottom:15px}.pieces{position:relative;height:360px;background:#fafafa;border-radius:12px;padding:10px;overflow:hidden}.piece{position:absolute;padding:12px 18px;border-radius:6px;font-size:22px;font-weight:600;box-shadow:0 3px 8px rgba(0,0,0,.22);transform:rotate(var(--rot));white-space:nowrap}.orange{background:#ffc46b;left:25px;top:22px}.blue{background:#69c8ec;left:285px;top:30px}.green{background:#b9df78;right:20px;top:38px}.yellow{background:#ffd95f;left:25px;top:170px;font-size:18px}.red{background:#ff8b84;left:25px;top:230px;font-size:18px}.gray{background:#cfdce5;left:25px;top:290px;font-size:18px}.bubble,.letterBubble{display:inline-block;background:#fff;border-radius:50%;padding:4px 10px;margin-right:8px}.letterBubble{background:#1e88e5;color:white;margin-left:10px;margin-right:0}.matchRow{display:flex;align-items:center;gap:8px;margin:10px 0;font-size:18px}.matchRow input{width:80px;margin:0}.success{color:#1b5e20;font-weight:bold;margin-top:10px}
+body{
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#4facfe,#00f2fe);
+  min-height:100vh;
+  margin:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.card{
+  background:#fff;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  width:980px;
+  display:flex;
+  gap:20px;
+}
+.levelNav{
+  width:150px;
+  background:#f7f7f7;
+  border-radius:12px;
+  padding:12px;
+  font-size:14px;
+}
+.levelNav h4{margin:0 0 10px 0;}
+.levelItem{
+  background:white;
+  border-radius:9px;
+  padding:9px;
+  margin:7px 0;
+  cursor:pointer;
+  box-shadow:0 2px 5px rgba(0,0,0,.12);
+  font-weight:600;
+}
+.levelItem:hover{background:#eef7ff;transform:scale(1.02);}
+.levelItem.active{background:#d7ecff;border:2px solid #1e88e5;}
+.levelItem.done::after{content:' ✓';color:#1b5e20;font-weight:bold;}
+.modeBox{
+  margin-top:16px;
+  background:#333;
+  color:white;
+  border-radius:10px;
+  padding:11px;
+  text-align:center;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow:0 2px 5px rgba(0,0,0,.18);
+}
+.modeBox:hover{transform:scale(1.02);background:#1e88e5;}
+.left{flex:2;}
+.right{
+  flex:1;
+  background:#f7f7f7;
+  padding:12px;
+  border-radius:12px;
+  font-size:14px;
+  display:none;
+}
+.progress{
+  height:10px;
+  background:#eee;
+  border-radius:10px;
+  margin-bottom:15px;
+  overflow:hidden;
+}
+.progress-bar{
+  height:100%;
+  background:#4CAF50;
+  width:0%;
+  transition:width .3s;
+}
+.math{
+  font-family:monospace;
+  background:#f7f7f7;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:10px;
+  line-height:1.8;
+}
+.eqline{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+}
+.operation{color:#555;white-space:nowrap;}
+.prompt{font-weight:bold;margin:10px 0 8px;}
+.sqrtExpression{display:inline-flex;align-items:flex-start;gap:3px;vertical-align:middle;}
+.sqrtSymbol{font-size:2.2em;line-height:.85;transform:scaleY(1.25);display:inline-block;}
+.sqrtRadicand{border-top:2px solid #333;padding:4px 8px 0;display:inline-block;min-height:1.4em;}
+button{
+  width:100%;
+  margin:6px 0;
+  padding:11px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:15px;
+  transition:.15s;
+}
+button:hover{transform:scale(1.02);}
+.restart,.darkBtn{background:#333;color:white;}
+.feedback{color:#c62828;font-weight:bold;margin-top:10px;}
+.specialHint{color:#c62828;font-weight:bold;font-size:18px;margin:12px 0;}
+.inputArea{background:#fff8e1;padding:12px;border-radius:10px;margin-top:10px;}
+input{box-sizing:border-box;width:100%;padding:9px;border:1px solid #ccc;border-radius:8px;margin:6px 0;}
+.descItem{margin:8px 0;}
+.smallHint{color:#666;font-size:13px;}
+.finishBig{font-size:30px;font-weight:bold;text-align:center;margin:18px 0;color:#1b5e20;}
+.worksheet{background:#fff;padding:14px;border-radius:14px;}
+.worksheetTitle{font-size:24px;margin-bottom:15px;}
+.pieces{position:relative;height:420px;background:#fafafa;border-radius:12px;padding:10px;overflow:hidden;}
+.piece{position:absolute;padding:11px 14px;border-radius:6px;font-size:20px;font-weight:600;box-shadow:0 3px 8px rgba(0,0,0,.22);transform:rotate(var(--rot));white-space:nowrap;}
+.orange{background:#ffc46b;left:20px;top:22px;}
+.blue{background:#69c8ec;left:250px;top:28px;}
+.green{background:#b9df78;left:490px;top:34px;}
+.yellow{background:#ffd95f;left:25px;top:180px;font-size:18px;}
+.red{background:#ff8b84;left:25px;top:250px;font-size:18px;}
+.gray{background:#cfdce5;left:25px;top:320px;font-size:18px;}
+.bubble,.letterBubble{display:inline-block;background:#fff;border-radius:50%;padding:4px 10px;margin-right:8px;}
+.letterBubble{background:#1e88e5;color:white;margin-left:10px;margin-right:0;}
+.matchRow{display:flex;align-items:center;gap:8px;margin:10px 0;font-size:18px;}
+.matchRow input{width:80px;margin:0;}
+.success{color:#1b5e20;font-weight:bold;margin-top:10px;}
 </style>
 </head>
 <body>
@@ -12,6 +135,7 @@ body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#4facfe
   <div class="levelNav">
     <h4>Geschaffte Level</h4>
     <div id="levelNavList" class="smallHint">Noch kein Level geschafft.</div>
+    <div id="modeBox" class="modeBox" onclick="openPracticePassword()">Übungsmodus</div>
   </div>
   <div class="left">
     <div class="progress"><div id="bar" class="progress-bar"></div></div>
@@ -25,88 +149,769 @@ body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#4facfe
   </div>
 </div>
 <script>
-let levelIndex=0,stepIndex=0,failed=false,history=[],descriptions=[],reviewMode=false,worksheetGateShown=false;
-let completedLevels = new Set();
-let level9Completed = false;
-const defaultDescriptions=["Konstanten Term auf die andere Seite bringen","Durch den Faktor teilen","Plus-Minus-Wurzel ziehen","Beide Gleichungen lösen"];
+let currentMode="learning";
+let levelIndex=0;
+let stepIndex=0;
+let failed=false;
+let reviewMode=false;
+let worksheetGateShown=false;
+let history=[];
+let descriptions=[];
+let completedLevels=new Set();
+let level9Completed=false;
+let level10Completed=false;
+let completedPracticeSubtasks=new Set();
+let partialPracticeSubtasks=new Set();
+let practiceAnswers={};
+let extraPracticeUnlocked=false;
+
+const defaultDescriptions=[
+  "Konstanten Term auf die andere Seite bringen",
+  "Durch den Faktor teilen",
+  "Plus-Minus-Wurzel ziehen",
+  "Beide Gleichungen lösen"
+];
+
+function level(title,collectDescriptions,steps){return{title,collectDescriptions,steps};}
+function step(eq,correctOp,result,wrongs){return{eq,correctOp,result,wrongs};}
+function wrong(op,result,msg){return{op,result,msg};}
+function sqrtHTML(expression,negative=false){return `<span class='sqrtExpression'><span class='sqrtSymbol'>${negative?"-√":"√"}</span><span class='sqrtRadicand'>${expression}</span></span>`;}
+function rootEquation(equation){const parts=equation.split("=");const left=parts[0].trim();const right=parts[1]?parts[1].trim():"0";return `${sqrtHTML(left)} = ${right} oder ${sqrtHTML(left,true)} = ${right}`;}
+function shuffle(array){const copy=[...array];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;}
+
+const fb={
+  tooEarlyRoot:"Noch nicht zielführend: Vor dem Wurzelziehen muss der quadratische Ausdruck allein auf einer Seite stehen.",
+  removeFactor:"Noch nicht zielführend: Vor dem Wurzelziehen sollte der Faktor vor der Klammer entfernt werden.",
+  sign:"Das ist zwar eine erlaubte Umformung, aber hier nicht hilfreich: Die Klammer wird dadurch nicht weiter isoliert.",
+  back:"Das führt zurück zum vorherigen Schritt und bringt dich der Lösung nicht näher.",
+  power:"Noch nicht zielführend: Zuerst muss die Potenz durch das Wurzelziehen verschwinden.",
+  linear:"Die Wurzel wurde bereits gezogen; jetzt geht es darum, die lineare Gleichung nach x aufzulösen."
+};
 
 const levels=[
 level("Level 1 - Löse die Gleichung.",false,[
-step("2·(x-3)² - 8 = 0","+8","2·(x-3)² = 8",[wrong("±√",rootEquation("2·(x-3)² - 8 = 0"),"Nicht zielführend. Der quadratische Ausdruck ist noch nicht passend isoliert."),wrong("·(-1)","-2·(x-3)² + 8 = 0","Das verändert nur die Vorzeichen, bringt uns hier aber nicht näher zur Lösung."),wrong("+3","2·(x-3)² - 5 = 3","Nicht zielführend. Die 3 steckt in der Klammer und sollte hier nicht einfach addiert werden.")]),
-step("2·(x-3)² = 8",":2","(x-3)² = 4",[wrong("±√",rootEquation("2·(x-3)² = 8"),"Nicht zielführend. Erst sollte der Faktor vor der Klammer entfernt werden."),wrong("+8","2·(x-3)² + 8 = 16","Nicht zielführend. Die 8 steht schon auf der rechten Seite."),wrong("·(-1)","-2·(x-3)² = -8","Das verändert nur die Vorzeichen, bringt uns hier aber nicht näher zur Lösung.")]),
-step("(x-3)² = 4","±√","x-3 = 2 oder x-3 = -2",[wrong("+3","(x-3)² + 3 = 7","Nicht zielführend. Vor dem Auflösen der Klammerstruktur muss zuerst die Wurzel gezogen werden."),wrong(":2","(x-3)² : 2 = 2","Nicht zielführend."),wrong("·(-1)","-(x-3)² = -4","Das verändert nur die Vorzeichen, bringt uns hier aber nicht näher zur Lösung.")]),
-step("x-3 = 2 oder x-3 = -2","+3","x₁ = 5 und x₂ = 1",[wrong("-3","x-6 = -1 oder x-6 = -5","Nicht zielführend. Die 3 muss auf die andere Seite gebracht werden."),wrong(":2","(x-3):2 = 1 oder (x-3):2 = -1","Nicht zielführend."),wrong("±√",rootEquation("x-3 = 2"),"Nicht zielführend. Die Wurzel wurde bereits verwendet.")])]),
-
+ step("2·(x-3)² - 8 = 0","+8","2·(x-3)² = 8",[wrong("±√",rootEquation("2·(x-3)² - 8 = 0"),fb.tooEarlyRoot),wrong("·(-1)","-2·(x-3)² + 8 = 0",fb.sign),wrong("+3","2·(x-3)² - 5 = 3","Nicht zielführend: Die 3 steckt in der Klammer und sollte hier nicht einfach addiert werden.")]),
+ step("2·(x-3)² = 8",":2","(x-3)² = 4",[wrong("±√",rootEquation("2·(x-3)² = 8"),fb.removeFactor),wrong("+8","2·(x-3)² + 8 = 16","Nicht zielführend: Die 8 steht bereits rechts; ein weiteres Addieren hilft nicht."),wrong("·(-1)","-2·(x-3)² = -8",fb.sign)]),
+ step("(x-3)² = 4","±√","x-3 = 2 oder x-3 = -2",[wrong("+3","(x-3)² + 3 = 7",fb.power),wrong(":2","(x-3)² : 2 = 2","Nicht zielführend: Die Klammer ist bereits isoliert, jetzt muss die Potenz verschwinden."),wrong("·(-1)","-(x-3)² = -4",fb.sign)]),
+ step("x-3 = 2 oder x-3 = -2","+3","x₁ = 5 und x₂ = 1",[wrong("-3","x-6 = -1 oder x-6 = -5","Nicht zielführend: Die 3 muss auf die andere Seite gebracht werden, also wird hier +3 benötigt."),wrong(":2","(x-3):2 = 1 oder (x-3):2 = -1","Nicht zielführend: Jetzt liegt eine lineare Gleichung vor, die 3 muss entfernt werden."),wrong("±√",rootEquation("x-3 = 2"),fb.linear)])
+]),
 level("Level 2 - Löse die Gleichung.",true,[
-step("3·(x+2)² - 27 = 0","+27","3·(x+2)² = 27",[wrong("±√",rootEquation("3·(x+2)² - 27 = 0"),"Nicht zielführend. Der quadratische Ausdruck ist noch nicht passend isoliert."),wrong("-2","3·(x+2)² - 29 = -2","Nicht zielführend. Die 2 gehört zur Klammer und löst die Gleichung hier nicht."),wrong("·3","9·(x+2)² - 81 = 0","Nicht zielführend. Dadurch werden die Zahlen nur größer.")]),
-step("3·(x+2)² = 27",":3","(x+2)² = 9",[wrong("±√",rootEquation("3·(x+2)² = 27"),"Nicht zielführend. Erst sollte der Faktor vor der Klammer entfernt werden."),wrong("-27","3·(x+2)² - 27 = 0","Nicht zielführend. Das führt zurück zum vorherigen Schritt."),wrong("+2","3·(x+2)² + 2 = 29","Nicht zielführend. Die 2 in der Klammer ist hier noch nicht dran.")]),
-step("(x+2)² = 9","±√","x+2 = 3 oder x+2 = -3",[wrong("-2","(x+2)² - 2 = 7","Nicht zielführend. Erst muss die Potenz verschwinden."),wrong(":3","(x+2)² : 3 = 3","Nicht zielführend."),wrong("+9","(x+2)² + 9 = 18","Nicht zielführend. Die 9 ist bereits isoliert.")]),
-step("x+2 = 3 oder x+2 = -3","-2","x₁ = 1 und x₂ = -5",[wrong("+2","x+4 = 5 oder x+4 = -1","Nicht zielführend. Die 2 muss weg, nicht vergrößert werden."),wrong(":3","(x+2):3 = 1 oder (x+2):3 = -1","Nicht zielführend."),wrong("±√",rootEquation("x+2 = 3"),"Nicht zielführend. Die Wurzel wurde bereits verwendet.")])]),
-
+ step("3·(x+2)² - 27 = 0","+27","3·(x+2)² = 27",[wrong("±√",rootEquation("3·(x+2)² - 27 = 0"),fb.tooEarlyRoot),wrong("-2","3·(x+2)² - 29 = -2","Nicht zielführend: Die 2 gehört zur Klammer und ist erst später wichtig."),wrong("·3","9·(x+2)² - 81 = 0","Nicht zielführend: Dadurch werden die Zahlen größer, ohne die Klammer zu isolieren.")]),
+ step("3·(x+2)² = 27",":3","(x+2)² = 9",[wrong("±√",rootEquation("3·(x+2)² = 27"),fb.removeFactor),wrong("-27","3·(x+2)² - 27 = 0",fb.back),wrong("+2","3·(x+2)² + 2 = 29","Nicht zielführend: Die 2 in der Klammer ist hier noch nicht dran.")]),
+ step("(x+2)² = 9","±√","x+2 = 3 oder x+2 = -3",[wrong("-2","(x+2)² - 2 = 7",fb.power),wrong(":3","(x+2)² : 3 = 3","Nicht zielführend: Die rechte Seite ist nicht der Faktor vor der Klammer."),wrong("+9","(x+2)² + 9 = 18","Nicht zielführend: Die 9 ist bereits isoliert.")]),
+ step("x+2 = 3 oder x+2 = -3","-2","x₁ = 1 und x₂ = -5",[wrong("+2","x+4 = 5 oder x+4 = -1","Nicht zielführend: Die 2 muss weg, nicht vergrößert werden."),wrong(":3","(x+2):3 = 1 oder (x+2):3 = -1","Nicht zielführend: Jetzt wird die 2 auf die andere Seite gebracht."),wrong("±√",rootEquation("x+2 = 3"),fb.linear)])
+]),
 level("Level 3 - Löse die Gleichung.",false,[
-step("4·(x-1)² - 36 = 0","+36","4·(x-1)² = 36",[wrong("±√",rootEquation("4·(x-1)² - 36 = 0"),"Nicht zielführend. Der quadratische Ausdruck ist noch nicht passend isoliert."),wrong("+1","4·(x-1)² - 35 = 1","Nicht zielführend. Die 1 steht in der Klammer."),wrong("·4","16·(x-1)² - 144 = 0","Nicht zielführend. Dadurch wird die Gleichung unnötig schwerer.")]),
-step("4·(x-1)² = 36",":4","(x-1)² = 9",[wrong("±√",rootEquation("4·(x-1)² = 36"),"Nicht zielführend. Erst sollte der Faktor vor der Klammer entfernt werden."),wrong("-36","4·(x-1)² - 36 = 0","Nicht zielführend. Das führt zurück zum vorherigen Schritt."),wrong("-1","4·(x-1)² - 1 = 35","Nicht zielführend. Die 1 in der Klammer ist hier noch nicht dran.")]),
-step("(x-1)² = 9","±√","x-1 = 3 oder x-1 = -3",[wrong("+1","(x-1)² + 1 = 10","Nicht zielführend. Erst muss die Potenz verschwinden."),wrong(":9","(x-1)² : 9 = 1","Nicht zielführend."),wrong("·(-1)","-(x-1)² = -9","Das verändert nur die Vorzeichen, bringt uns hier aber nicht näher zur Lösung.")]),
-step("x-1 = 3 oder x-1 = -3","+1","x₁ = 4 und x₂ = -2",[wrong("-1","x-2 = 2 oder x-2 = -4","Nicht zielführend. Die 1 muss auf die andere Seite gebracht werden."),wrong(":3","(x-1):3 = 1 oder (x-1):3 = -1","Nicht zielführend."),wrong("±√",rootEquation("x-1 = 3"),"Nicht zielführend. Die Wurzel wurde bereits verwendet.")])]),
-
+ step("4·(x-1)² - 36 = 0","+36","4·(x-1)² = 36",[wrong("±√",rootEquation("4·(x-1)² - 36 = 0"),fb.tooEarlyRoot),wrong("+1","4·(x-1)² - 35 = 1","Nicht zielführend: Die 1 steht in der Klammer und wird erst am Ende benötigt."),wrong("·4","16·(x-1)² - 144 = 0","Nicht zielführend: Dadurch wird die Gleichung unnötig schwerer.")]),
+ step("4·(x-1)² = 36",":4","(x-1)² = 9",[wrong("±√",rootEquation("4·(x-1)² = 36"),fb.removeFactor),wrong("-36","4·(x-1)² - 36 = 0",fb.back),wrong("-1","4·(x-1)² - 1 = 35","Nicht zielführend: Die 1 in der Klammer hilft hier noch nicht.")]),
+ step("(x-1)² = 9","±√","x-1 = 3 oder x-1 = -3",[wrong("+1","(x-1)² + 1 = 10",fb.power),wrong(":9","(x-1)² : 9 = 1","Nicht zielführend: Dadurch verschwindet die Potenz nicht."),wrong("·(-1)","-(x-1)² = -9",fb.sign)]),
+ step("x-1 = 3 oder x-1 = -3","+1","x₁ = 4 und x₂ = -2",[wrong("-1","x-2 = 2 oder x-2 = -4","Nicht zielführend: Die 1 muss auf die andere Seite gebracht werden, also wird +1 benötigt."),wrong(":3","(x-1):3 = 1 oder (x-1):3 = -1","Nicht zielführend: Jetzt soll x isoliert werden."),wrong("±√",rootEquation("x-1 = 3"),fb.linear)])
+]),
 level("Level 4 - Löse die Gleichung.",false,[
-step("2.5·(x+4)² - 40 = 0","+40","2.5·(x+4)² = 40",[wrong("±√",rootEquation("2.5·(x+4)² - 40 = 0"),"Nicht zielführend. Der quadratische Ausdruck ist noch nicht passend isoliert."),wrong("+4","2.5·(x+4)² - 36 = 4","Nicht zielführend. Die 4 in der Klammer sollte hier noch nicht verwendet werden."),wrong("·2.5","6.25·(x+4)² - 100 = 0","Nicht zielführend. Dadurch wird die Gleichung nur größer.")]),
-step("2.5·(x+4)² = 40",":2.5","(x+4)² = 16",[wrong("±√",rootEquation("2.5·(x+4)² = 40"),"Nicht zielführend. Erst sollte der Faktor vor der Klammer entfernt werden."),wrong("-40","2.5·(x+4)² - 40 = 0","Nicht zielführend. Das führt zurück zum vorherigen Schritt."),wrong("+4","2.5·(x+4)² + 4 = 44","Nicht zielführend. Die 4 in der Klammer hilft hier noch nicht.")]),
-step("(x+4)² = 16","±√","x+4 = 4 oder x+4 = -4",[wrong("-4","(x+4)² - 4 = 12","Nicht zielführend. Erst muss die Potenz verschwinden."),wrong(":4","(x+4)² : 4 = 4","Nicht zielführend."),wrong("+16","(x+4)² + 16 = 32","Nicht zielführend. Die 16 ist bereits isoliert.")]),
-step("x+4 = 4 oder x+4 = -4","-4","x₁ = 0 und x₂ = -8",[wrong("+4","x+8 = 8 oder x+8 = 0","Nicht zielführend. Die 4 muss weg, nicht vergrößert werden."),wrong(":4","(x+4):4 = 1 oder (x+4):4 = -1","Nicht zielführend."),wrong("±√",rootEquation("x+4 = 4"),"Nicht zielführend. Die Wurzel wurde bereits verwendet.")])]),
-
+ step("2.5·(x+4)² - 40 = 0","+40","2.5·(x+4)² = 40",[wrong("±√",rootEquation("2.5·(x+4)² - 40 = 0"),fb.tooEarlyRoot),wrong("+4","2.5·(x+4)² - 36 = 4","Nicht zielführend: Die 4 in der Klammer wird erst später verwendet."),wrong("·2.5","6.25·(x+4)² - 100 = 0","Nicht zielführend: Dadurch wird der Faktor größer statt kleiner.")]),
+ step("2.5·(x+4)² = 40",":2.5","(x+4)² = 16",[wrong("±√",rootEquation("2.5·(x+4)² = 40"),fb.removeFactor),wrong("-40","2.5·(x+4)² - 40 = 0",fb.back),wrong("+4","2.5·(x+4)² + 4 = 44","Nicht zielführend: Die 4 in der Klammer hilft hier noch nicht.")]),
+ step("(x+4)² = 16","±√","x+4 = 4 oder x+4 = -4",[wrong("-4","(x+4)² - 4 = 12",fb.power),wrong(":4","(x+4)² : 4 = 4","Nicht zielführend: Dadurch verschwindet die Potenz nicht."),wrong("+16","(x+4)² + 16 = 32","Nicht zielführend: Die 16 ist bereits isoliert.")]),
+ step("x+4 = 4 oder x+4 = -4","-4","x₁ = 0 und x₂ = -8",[wrong("+4","x+8 = 8 oder x+8 = 0","Nicht zielführend: Die 4 muss weg, nicht vergrößert werden."),wrong(":4","(x+4):4 = 1 oder (x+4):4 = -1","Nicht zielführend: Jetzt soll x isoliert werden."),wrong("±√",rootEquation("x+4 = 4"),fb.linear)])
+]),
 level("Level 5 - Löse die Gleichung.",false,[
-step("1.5·(x-2)² - 37.5 = 0","+37.5","1.5·(x-2)² = 37.5",[wrong("±√",rootEquation("1.5·(x-2)² - 37.5 = 0"),"Nicht zielführend. Der quadratische Ausdruck ist noch nicht passend isoliert."),wrong("+2","1.5·(x-2)² - 35.5 = 2","Nicht zielführend. Die 2 in der Klammer ist hier noch nicht dran."),wrong("·1.5","2.25·(x-2)² - 56.25 = 0","Nicht zielführend. Dadurch werden die Zahlen nur größer.")]),
-step("1.5·(x-2)² = 37.5",":1.5","(x-2)² = 25",[wrong("±√",rootEquation("1.5·(x-2)² = 37.5"),"Nicht zielführend. Erst sollte der Faktor vor der Klammer entfernt werden."),wrong("-37.5","1.5·(x-2)² - 37.5 = 0","Nicht zielführend. Das führt zurück zum vorherigen Schritt."),wrong("-2","1.5·(x-2)² - 2 = 35.5","Nicht zielführend. Die 2 in der Klammer hilft hier noch nicht.")]),
-step("(x-2)² = 25","±√","x-2 = 5 oder x-2 = -5",[wrong("+2","(x-2)² + 2 = 27","Nicht zielführend. Erst muss die Potenz verschwinden."),wrong(":5","(x-2)² : 5 = 5","Nicht zielführend."),wrong("+25","(x-2)² + 25 = 50","Nicht zielführend. Die 25 ist bereits isoliert.")]),
-step("x-2 = 5 oder x-2 = -5","+2","x₁ = 7 und x₂ = -3",[wrong("-2","x-4 = 3 oder x-4 = -7","Nicht zielführend. Die 2 muss auf die andere Seite gebracht werden."),wrong(":5","(x-2):5 = 1 oder (x-2):5 = -1","Nicht zielführend."),wrong("±√",rootEquation("x-2 = 5"),"Nicht zielführend. Die Wurzel wurde bereits verwendet.")])]),
-
+ step("(1/2)·(x-2)² = 37.5","·2","(x-2)² = 75",[wrong("±√",rootEquation("(1/2)·(x-2)² = 37.5"),fb.removeFactor),wrong("+2","(1/2)·(x-2)² + 2 = 39.5","Nicht zielführend: Die 2 in der Klammer wird erst später gebraucht; zuerst sollte der Faktor vor der Klammer entfernt werden."),wrong(":2","(1/4)·(x-2)² = 18.75","Nicht zielführend: Bei dem Faktor 1/2 hilft Teilen durch 2 nicht; man sollte mit 2 multiplizieren.")]),
+ step("(x-2)² = 75","±√","x-2 = √75 oder x-2 = -√75",[wrong("+2","(x-2)² + 2 = 77",fb.power),wrong(":75","(x-2)² : 75 = 1","Nicht zielführend: Dadurch verschwindet die Potenz nicht."),wrong("·(-1)","-(x-2)² = -75",fb.sign)]),
+ step("x-2 = √75 oder x-2 = -√75","+2","x₁ = 2 + √75 und x₂ = 2 - √75",[wrong("-2","x-4 = √75 - 2 oder x-4 = -√75 - 2","Nicht zielführend: Die 2 muss auf die andere Seite gebracht werden, also wird +2 benötigt."),wrong(":2","(x-2):2 = √75:2 oder (x-2):2 = -√75:2","Nicht zielführend: Jetzt soll x isoliert werden."),wrong("±√",rootEquation("x-2 = √75"),fb.linear)])
+]),
 level("Level 6 - Löse die Gleichung.",false,[
-step("2.5·(x-1.5)² - 30 = 0","+30","2.5·(x-1.5)² = 30",[wrong("±√",rootEquation("2.5·(x-1.5)² - 30 = 0"),"Nicht zielführend. Der quadratische Ausdruck ist noch nicht passend isoliert."),wrong("+1.5","2.5·(x-1.5)² - 28.5 = 1.5","Nicht zielführend. Die 1.5 in der Klammer ist hier noch nicht dran."),wrong("·2.5","6.25·(x-1.5)² - 75 = 0","Nicht zielführend. Dadurch werden die Zahlen nur größer.")]),
-step("2.5·(x-1.5)² = 30",":2.5","(x-1.5)² = 12",[wrong("±√",rootEquation("2.5·(x-1.5)² = 30"),"Nicht zielführend. Erst sollte der Faktor vor der Klammer entfernt werden."),wrong("-30","2.5·(x-1.5)² - 30 = 0","Nicht zielführend. Das führt zurück zum vorherigen Schritt."),wrong("+1.5","2.5·(x-1.5)² + 1.5 = 31.5","Nicht zielführend. Die 1.5 in der Klammer hilft hier noch nicht.")]),
-step("(x-1.5)² = 12","±√","x-1.5 = √12 oder x-1.5 = -√12",[wrong("+1.5","(x-1.5)² + 1.5 = 13.5","Nicht zielführend. Erst muss die Potenz verschwinden."),wrong(":12","(x-1.5)² : 12 = 1","Nicht zielführend."),wrong("·(-1)","-(x-1.5)² = -12","Das verändert nur die Vorzeichen, bringt uns hier aber nicht näher zur Lösung.")]),
-step("x-1.5 = √12 oder x-1.5 = -√12","+1.5","x₁ = 1.5 + √12 und x₂ = 1.5 - √12",[wrong("-1.5","x-3 = √12 - 1.5 oder x-3 = -√12 - 1.5","Nicht zielführend. Die 1.5 muss auf die andere Seite gebracht werden."),wrong(":2.5","(x-1.5):2.5 = √12:2.5 oder (x-1.5):2.5 = -√12:2.5","Nicht zielführend."),wrong("±√",rootEquation("x-1.5 = √12"),"Nicht zielführend. Die Wurzel wurde bereits verwendet.")])]),
-
+ step("2.5·(x-1.5)² - 30 = 0","+30","2.5·(x-1.5)² = 30",[wrong("±√",rootEquation("2.5·(x-1.5)² - 30 = 0"),fb.tooEarlyRoot),wrong("+1.5","2.5·(x-1.5)² - 28.5 = 1.5","Nicht zielführend: Die 1.5 in der Klammer ist hier noch nicht dran."),wrong("·2.5","6.25·(x-1.5)² - 75 = 0","Nicht zielführend: Dadurch wird der Faktor größer statt kleiner.")]),
+ step("2.5·(x-1.5)² = 30",":2.5","(x-1.5)² = 12",[wrong("±√",rootEquation("2.5·(x-1.5)² = 30"),fb.removeFactor),wrong("-30","2.5·(x-1.5)² - 30 = 0",fb.back),wrong("+1.5","2.5·(x-1.5)² + 1.5 = 31.5","Nicht zielführend: Die 1.5 in der Klammer hilft hier noch nicht.")]),
+ step("(x-1.5)² = 12","±√","x-1.5 = √12 oder x-1.5 = -√12",[wrong("+1.5","(x-1.5)² + 1.5 = 13.5",fb.power),wrong(":12","(x-1.5)² : 12 = 1","Nicht zielführend: Dadurch verschwindet die Potenz nicht."),wrong("·(-1)","-(x-1.5)² = -12",fb.sign)]),
+ step("x-1.5 = √12 oder x-1.5 = -√12","+1.5","x₁ = 1.5 + √12 und x₂ = 1.5 - √12",[wrong("-1.5","x-3 = √12 - 1.5 oder x-3 = -√12 - 1.5","Nicht zielführend: Die 1.5 muss auf die andere Seite gebracht werden, also wird +1.5 benötigt."),wrong(":2.5","(x-1.5):2.5 = √12:2.5 oder (x-1.5):2.5 = -√12:2.5","Nicht zielführend: Jetzt soll x isoliert werden."),wrong("±√",rootEquation("x-1.5 = √12"),fb.linear)])
+]),
 level("Level 7 - Löse die Gleichung.",false,[
-step("2·(x-1)² + 8 = 0","-8","2·(x-1)² = -8",[wrong("±√",rootEquation("2·(x-1)² + 8 = 0"),"Nicht zielführend. Der quadratische Ausdruck ist noch nicht passend isoliert."),wrong("+8","2·(x-1)² + 16 = 8","Nicht zielführend. Die 8 muss hier subtrahiert werden."),wrong("·2","4·(x-1)² + 16 = 0","Nicht zielführend. Dadurch werden die Zahlen nur größer.")]),
-step("2·(x-1)² = -8",":2","(x-1)² = -4",[wrong("±√",rootEquation("2·(x-1)² = -8"),"Nicht zielführend. Erst sollte der Faktor vor der Klammer entfernt werden."),wrong("+8","2·(x-1)² + 8 = 0","Nicht zielführend. Das führt zurück zum Anfang."),wrong("-1","2·(x-1)² - 1 = -9","Nicht zielführend. Die 1 in der Klammer ist hier noch nicht dran.")]),
-step("(x-1)² = -4","keine Lösung","keine Lösung, da ein Quadrat nicht negativ sein kann",[wrong("±√","x-1 = 2 oder x-1 = -2","Nicht zielführend. Aus -4 kann man im reellen Bereich keine Wurzel ziehen."),wrong("+1","(x-1)² + 1 = -3","Nicht zielführend. Das Problem ist die negative rechte Seite."),wrong("·(-1)","-(x-1)² = 4","Nicht zielführend. Links steht dann das Negative eines Quadrats.")])]),
-
+ step("2·(x-1)² + 8 = 0","-8","2·(x-1)² = -8",[wrong("±√",rootEquation("2·(x-1)² + 8 = 0"),fb.tooEarlyRoot),wrong("+8","2·(x-1)² + 16 = 8","Nicht zielführend: Die 8 muss hier subtrahiert werden."),wrong("·2","4·(x-1)² + 16 = 0","Nicht zielführend: Dadurch werden die Zahlen nur größer.")]),
+ step("2·(x-1)² = -8",":2","(x-1)² = -4",[wrong("±√",rootEquation("2·(x-1)² = -8"),fb.removeFactor),wrong("+8","2·(x-1)² + 8 = 0",fb.back),wrong("-1","2·(x-1)² - 1 = -9","Nicht zielführend: Die 1 in der Klammer ist hier noch nicht dran.")]),
+ step("(x-1)² = -4","keine Lösung","keine Lösung, da ein Quadrat nicht negativ sein kann",[wrong("±√","x-1 = 2 oder x-1 = -2","Nicht zielführend: Aus -4 kann man im reellen Bereich keine Wurzel ziehen."),wrong("+1","(x-1)² + 1 = -3","Nicht zielführend: Das Problem ist die negative rechte Seite."),wrong("·(-1)","-(x-1)² = 4","Nicht zielführend: Links steht dann das Negative eines Quadrats.")])
+]),
 level("Level 8 - Löse die Gleichung.",false,[
-step("3·(x+2.5)² = 0",":3","(x+2.5)² = 0",[wrong("±√",rootEquation("3·(x+2.5)² = 0"),"Nicht zielführend. Erst sollte der Faktor vor der Klammer entfernt werden."),wrong("-2.5","3·(x+2.5)² - 2.5 = -2.5","Nicht zielführend. Die 2.5 in der Klammer ist hier noch nicht dran."),wrong("·3","9·(x+2.5)² = 0","Nicht zielführend. Dadurch wird die Gleichung nicht einfacher.")]),
-step("(x+2.5)² = 0","±√","x+2.5 = 0",[wrong("+2.5","(x+2.5)² + 2.5 = 2.5","Nicht zielführend. Erst muss die Potenz verschwinden."),wrong(":2.5","(x+2.5)² : 2.5 = 0","Nicht zielführend."),wrong("·(-1)","-(x+2.5)² = 0","Das verändert nur die Vorzeichen, bringt uns hier aber nicht näher zur Lösung.")]),
-step("x+2.5 = 0","-2.5","x = -2.5",[wrong("+2.5","x+5 = 2.5","Nicht zielführend. Die 2.5 muss weg, nicht vergrößert werden."),wrong(":2.5","(x+2.5):2.5 = 0","Nicht zielführend."),wrong("±√",rootEquation("x+2.5 = 0"),"Nicht zielführend. Die Wurzel wurde bereits verwendet.")])])
+ step("3·(x+2.5)² = 0",":3","(x+2.5)² = 0",[wrong("+2.5","3·(x+2.5)² + 2.5 = 2.5","Nicht zielführend: Die 2.5 in der Klammer wird erst später gebraucht; zuerst sollte der Faktor vor der Klammer entfernt werden."),wrong("-2.5","3·(x+2.5)² - 2.5 = -2.5","Nicht zielführend: Die 2.5 in der Klammer ist hier noch nicht dran."),wrong("·3","9·(x+2.5)² = 0","Nicht zielführend: Dadurch wird die Gleichung nicht einfacher, sondern der Faktor wird größer.")]),
+ step("(x+2.5)² = 0","±√","x+2.5 = 0",[wrong("+2.5","(x+2.5)² + 2.5 = 2.5",fb.power),wrong(":2.5","(x+2.5)² : 2.5 = 0","Nicht zielführend: Dadurch verschwindet die Potenz nicht."),wrong("·(-1)","-(x+2.5)² = 0",fb.sign)]),
+ step("x+2.5 = 0","-2.5","x = -2.5",[wrong("+2.5","x+5 = 2.5","Nicht zielführend: Die 2.5 muss weg, nicht vergrößert werden."),wrong(":2.5","(x+2.5):2.5 = 0","Nicht zielführend: Jetzt soll x isoliert werden."),wrong("±√",rootEquation("x+2.5 = 0"),fb.linear)])
+])
 ];
 
-function level(title,collectDescriptions,steps){return{title,collectDescriptions,steps}}
-function step(eq,correctOp,result,wrongs){return{eq,correctOp,result,wrongs}}
-function wrong(op,result,msg){return{op,result,msg}}
-function sqrtHTML(expression,negative=false){return `<span class='sqrtExpression'><span class='sqrtSymbol'>${negative?"-√":"√"}</span><span class='sqrtRadicand'>${expression}</span></span>`}
-function rootEquation(equation){const parts=equation.split("=");const left=parts[0].trim();const right=parts[1]?parts[1].trim():"0";return `${sqrtHTML(left)} = ${right} oder ${sqrtHTML(left,true)} = ${right}`}
-function shuffle(array){const copy=[...array];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]]}return copy}
-function resetLevel(){stepIndex=0;failed=false;reviewMode=false;history=[{eq:levels[levelIndex].steps[0].eq,op:null}];renderLevelNav();render()}
-function renderLevelNav(){const nav=document.getElementById("levelNavList");let html="";for(let i=0;i<levels.length;i++){if(completedLevels.has(i)){html+=`<div class='levelItem done ${i===levelIndex?'active':''}' onclick='jumpToLevel(${i})'>Level ${i+1}</div>`}}if(level9Completed){html+=`<div class='levelItem done' onclick='jumpToLevel(8)'>Level 9</div>`}nav.innerHTML=html||"Noch kein Level geschafft."}
-function jumpToLevel(index){if(index===8&&level9Completed){showLevel9();return}if(!completedLevels.has(index))return;levelIndex=index;stepIndex=0;failed=false;reviewMode=false;history=[{eq:levels[levelIndex].steps[0].eq,op:null}];renderLevelNav();render()}
-function choose(option){if(failed||reviewMode)return;const current=levels[levelIndex].steps[stepIndex];const result=option.correct?current.result:option.result;history[history.length-1].op=option.text;history.push({eq:result,op:null});renderHistory();renderDescriptions();updateProgress();if(option.correct){if(levels[levelIndex].collectDescriptions&&!descriptions[stepIndex]){askDescription()}else{stepIndex++;render()}}else{failed=true;showWrong(option.msg)}}
-function showWrong(msg){document.getElementById("buttons").innerHTML=`<div class='feedback'>${msg||"Nicht zielführend."}</div><button class='restart' onclick='resetLevel()'>Neustart</button>`}
-function askDescription(){document.getElementById("buttons").innerHTML=`<div class='inputArea'><p><b>Wie würdest du diesen Schritt beschreiben?</b></p><input id='inputDesc'><button class='darkBtn' onclick='saveDescription()'>Übernehmen</button></div>`}
-function saveDescription(){const input=document.getElementById("inputDesc");const value=input.value.trim()||defaultDescriptions[stepIndex]||"Schritt beschreiben";descriptions[stepIndex]=value;stepIndex++;render()}
-function renderHistory(){let html="";history.forEach(item=>{html+=`<div class='eqline'><span>${item.eq}</span><span class='operation'>${item.op?"| "+item.op:""}</span></div>`});document.getElementById("history").innerHTML=html}
-function renderDescriptions(){const panel=document.getElementById("rightPanel"),desc=document.getElementById("desc");if(levelIndex===0&&descriptions.length===0){panel.style.display="none";desc.innerHTML="";return}panel.style.display="block";if(descriptions.length===0){desc.innerHTML=`<p class='smallHint'>Ab Level 2 sammelst du hier deine Beschreibungen.</p>`;return}desc.innerHTML=descriptions.map((d,i)=>d?`<div class='descItem'>${i+1}. ${d}</div>`:"").join("")}
-function updateProgress(){const total=(levelIndex<levels.length)?levels[levelIndex].steps.length:1;document.getElementById("bar").style.width=Math.min((stepIndex/total)*100,100)+"%"}
-function render(){renderHistory();renderDescriptions();updateProgress();const currentLevel=levels[levelIndex];const current=currentLevel.steps[stepIndex];document.getElementById("levelTitle").innerText=currentLevel.title;const buttons=document.getElementById("buttons");buttons.innerHTML="";if(stepIndex>=currentLevel.steps.length){showLevelReview();return}buttons.innerHTML=`<div class='prompt'>Welche Äquivalenzumformung soll durchgeführt werden?</div>`;const options=shuffle([{text:current.correctOp,correct:true},...current.wrongs.map(w=>({text:w.op,correct:false,result:w.result,msg:w.msg}))]);options.forEach(o=>{const b=document.createElement("button");b.innerText=o.text;b.onclick=()=>choose(o);buttons.appendChild(b)})}
-function showLevelReview(){reviewMode=true;completedLevels.add(levelIndex);renderLevelNav();document.getElementById("bar").style.width="100%";
-if(levelIndex===4&&!worksheetGateShown){worksheetGateShown=true;document.getElementById("history").innerHTML=`<div style="font-size:26px;font-weight:bold;text-align:center;margin:10px 0;">Alle Level geschafft 🎉</div><div class="finishBig">Fülle nun das Arbeitsblatt aus</div>`;document.getElementById("buttons").innerHTML=`<button class='restart' onclick='location.reload()'>Nochmal spielen</button><button class='darkBtn' onclick='startLevel6()'>Arbeitsblatt ist ausgefüllt</button>`;return}
-if(levelIndex===7){document.getElementById("buttons").innerHTML=`<div class='feedback'>Achtung: Das ist ein besonderer Fall mit nur einer Lösung.</div><button class='darkBtn' onclick='continueAfterReview()'>Weiter</button>`;return}
-if(levelIndex>=5){document.getElementById("buttons").innerHTML=`<button class='darkBtn' onclick='continueAfterReview()'>Weiter</button>`;return}
-if(levelIndex>=1){document.getElementById("buttons").innerHTML=`<div class='inputArea'><p><b>Passt die Beschreibung rechts noch oder möchtest du sie ändern?</b></p><button class='darkBtn' onclick='continueAfterReview()'>Passt so</button><button onclick='editDescriptions()'>Beschreibung ändern</button></div>`}else{document.getElementById("buttons").innerHTML=`<button class='darkBtn' onclick='nextLevel()'>Nächstes Level</button>`}}
-function startLevel6(){levelIndex=5;stepIndex=0;failed=false;reviewMode=false;history=[{eq:levels[levelIndex].steps[0].eq,op:null}];renderLevelNav();render()}
-function editDescriptions(){const values=descriptions.length?descriptions:defaultDescriptions;let inputs="";for(let i=0;i<4;i++){inputs+=`<label>${i+1}.<input id='edit${i}' value='${values[i]||""}'></label>`}document.getElementById("buttons").innerHTML=`<div class='inputArea'><p><b>Ändere deine Beschreibung:</b></p>${inputs}<button class='darkBtn' onclick='saveEditedDescriptions()'>Speichern und weiter</button></div>`}
-function saveEditedDescriptions(){descriptions=[];for(let i=0;i<4;i++){const value=document.getElementById("edit"+i).value.trim();descriptions[i]=value||defaultDescriptions[i]}renderDescriptions();continueAfterReview()}
-function continueAfterReview(){if(levelIndex>=levels.length-1){showLevel9();return}nextLevel()}
-function nextLevel(){levelIndex++;stepIndex=0;failed=false;reviewMode=false;history=[{eq:levels[levelIndex].steps[0].eq,op:null}];renderLevelNav();render()}
-function showLevel9(){reviewMode=true;document.getElementById("levelTitle").innerText="Level 9 - Ordne jeder Gleichung ihre Lösungen zu.";document.getElementById("bar").style.width="100%";document.getElementById("rightPanel").style.display="none";document.getElementById("history").innerHTML=`<div class='worksheet'><div class='worksheetTitle'>7 a) ☒ Ordne jeder Gleichung ihre Lösungen zu.</div><div class='pieces'><div class='piece orange' style='--rot:3deg'>(x − 7)² = 7 <span class='letterBubble'>A</span></div><div class='piece blue' style='--rot:-3deg'>(x + 7)² = 7 <span class='letterBubble'>B</span></div><div class='piece green' style='--rot:-3deg'>(x − √7)² = 7 <span class='letterBubble'>C</span></div><div class='piece yellow' style='--rot:0deg'><span class='bubble'>1</span>x₁ = √7 − 7; x₂ = −√7 − 7</div><div class='piece red' style='--rot:3deg'><span class='bubble'>2</span>x₁ = √7 + 7; x₂ = −√7 + 7</div><div class='piece gray' style='--rot:-3deg'><span class='bubble'>3</span>x₁ = 2 · √7; x₂ = 0</div></div></div>`;document.getElementById("buttons").innerHTML=`<div class='inputArea'><div class='matchRow'><label>A -</label><input id='ansA'></div><div class='matchRow'><label>B -</label><input id='ansB'></div><div class='matchRow'><label>C -</label><input id='ansC'></div><button class='darkBtn' onclick='checkLevel9()'>Prüfen</button><div id='matchFeedback'></div></div>`}
-function checkLevel9(){const a=document.getElementById("ansA").value.trim(),b=document.getElementById("ansB").value.trim(),c=document.getElementById("ansC").value.trim();const fb=document.getElementById("matchFeedback");if(a==="2"&&b==="1"&&c==="3"){level9Completed=true;renderLevelNav();fb.innerHTML=`<div class='success'>Richtig! Sehr gut zugeordnet 🎉</div><button class='restart' onclick='location.reload()'>Nochmal spielen</button>`}else{fb.innerHTML=`<div class='feedback'>Noch nicht richtig. Probiere es nochmal.</div>`}}
+function setBackground(mode){
+  document.body.style.background = mode==="practice" ? "linear-gradient(135deg,#ffe082,#ffb74d)" : "linear-gradient(135deg,#4facfe,#00f2fe)";
+}
+function setModeBox(){
+  const box=document.getElementById("modeBox");
+  if(currentMode==="practice"){
+    box.innerText="Erarbeitungsmodus";
+    box.onclick=backToLearningMode;
+  }else{
+    box.innerText="Übungsmodus";
+    box.onclick=openPracticePassword;
+  }
+}
+function openPracticePassword(){
+  currentMode="practice";
+  setBackground("practice");
+  setModeBox();
+  reviewMode=true;
+  failed=false;
+  document.getElementById("rightPanel").style.display="none";
+  document.getElementById("levelTitle").innerText="Übungsmodus";
+  document.getElementById("bar").style.width="0%";
+  document.getElementById("history").innerHTML=`
+    <div class='worksheet'>
+      <div class='worksheetTitle'>Passwort eingeben</div>
+      <p>Gib das Passwort ein, um den Übungsmodus zu öffnen.</p>
+    </div>
+  `;
+  document.getElementById("buttons").innerHTML=`
+    <div class='inputArea'>
+      <input id='practicePassword' type='password'>
+      <button class='darkBtn' onclick='checkPracticePassword()'>Öffnen</button>
+      <div id='practiceFeedback'></div>
+    </div>
+  `;
+  renderLevelNav();
+}
+function checkPracticePassword(){
+  const value=document.getElementById("practicePassword").value.trim();
+  const feedback=document.getElementById("practiceFeedback");
+  if(value==="55"){
+    showPracticePage();
+  }else{
+    feedback.innerHTML=`<div class='feedback'>Das Passwort stimmt noch nicht. Probiere es nochmal.</div>`;
+  }
+}
+function showPracticePage(){
+  currentMode="practice";
+  setBackground("practice");
+  setModeBox();
+  reviewMode=true;
+  failed=false;
+  document.getElementById("rightPanel").style.display="none";
+  document.getElementById("levelTitle").innerText="Übungsmodus";
+  document.getElementById("bar").style.width="0%";
+  document.getElementById("history").innerHTML=`
+    <div class='worksheet'>
+      <div class='worksheetTitle'>Übungsmodus</div>
+      <p style='font-size:20px;font-weight:bold;'>Buch Seite 151/152</p>
+      <p>Wähle eine Aufgabe aus. Für jede richtige Teilaufgabe bekommst du einen Stern. Für eine teilweise richtige Teilaufgabe bekommst du einen halben Stern.</p>
+      <div style='display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:15px;'>
+        ${practiceTile(1)}
+        ${practiceTile(2)}
+        ${practiceTile(4)}
+        ${practiceTile(10)}
+        ${lockedPracticeTile(12)}
+      </div>
+    </div>
+  `;
+  document.getElementById("buttons").innerHTML="";
+  renderLevelNav();
+}
+
+function allMainPracticeStarsCollected(){
+  const required=["1_e","1_f","1_g","1_h","2_a","2_d","2_g","4_a","4_b","10_a","10_b","10_c"];
+  return required.every(key=>completedPracticeSubtasks.has(key));
+}
+
+function getPracticeLabels(n){
+  if(n===1)return ["e","f","g","h"];
+  if(n===2)return ["a","d","g"];
+  if(n===4)return ["a","b"];
+  if(n===10)return ["a","b","c"];
+  return [];
+}
+
+function practiceTile(n){
+  const labels=getPracticeLabels(n);
+  const stars=labels.map(label=>{
+    const key=`${n}_${label}`;
+    if(completedPracticeSubtasks.has(key))return "⭐";
+    if(partialPracticeSubtasks.has(key))return "★½";
+    return "☆";
+  }).join(" ");
+  return `<button style='font-size:21px;font-weight:bold;padding:22px;background:white;border:2px solid #333;' onclick='openPracticeTask(${n})'>Aufgabe ${n}<br><span style='font-size:18px;'>${stars}</span></button>`;
+}
+
+function lockedPracticeTile(n){
+  const unlocked=extraPracticeUnlocked||allMainPracticeStarsCollected();
+  if(unlocked){
+    return `<button style='font-size:21px;font-weight:bold;padding:22px;background:linear-gradient(135deg,#b388ff,#ffd54f);border:2px solid #333;color:#1a1a1a;grid-column:1 / span 2;' onclick='openExtraPracticeTask()'>Bonusaufgabe<br><span style='font-size:24px;'>✨</span></button>`;
+  }
+  return `<button style='font-size:21px;font-weight:bold;padding:22px;background:#ddd;border:2px solid #999;color:#666;grid-column:1 / span 2;' onclick='showLockedPracticeInfo()'>Bonusaufgabe<br><span style='font-size:24px;'>🔒</span></button>`;
+}
+
+function showLockedPracticeInfo(){
+  document.getElementById("buttons").innerHTML=`
+    <div class='inputArea'>
+      <p><b>Löse erst alle anderen Aufgaben, dann werden diese Kacheln freigeschaltet.</b></p>
+      <p>Alternativ kannst du deine Lehrkraft nach dem Passwort fragen.</p>
+      <input id='extraPassword' type='password'>
+      <button class='darkBtn' onclick='checkExtraPassword()'>Freischalten</button>
+      <div id='extraPasswordFeedback'></div>
+    </div>
+  `;
+}
+
+function checkExtraPassword(){
+  const value=document.getElementById("extraPassword").value.trim();
+  if(value==="13"){
+    extraPracticeUnlocked=true;
+    document.getElementById("extraPasswordFeedback").innerHTML=`<div class='success'>Freigeschaltet!</div>`;
+    setTimeout(showPracticePage,700);
+  }else{
+    document.getElementById("extraPasswordFeedback").innerHTML=`<div class='feedback'>Das Passwort stimmt noch nicht.</div>`;
+  }
+}
+
+function openExtraPracticeTask(){
+  extraPracticeUnlocked=true;
+  document.getElementById("levelTitle").innerText=`Übungsmodus - Aufgabe 12`;
+  document.getElementById("history").innerHTML=`<div class='worksheet'><div class='worksheetTitle'>Aufgabe 12 - S. 152</div><p>Trage das Ergebnis in Metern ein. Gerundete Werte im passenden Bereich werden akzeptiert.</p></div>`;
+  document.getElementById("buttons").innerHTML=`
+    <div class='inputArea'>
+      <label style='font-weight:bold;'>Ergebnis in m:</label>
+      <input id='bonusAnswer'>
+      <button class='darkBtn' onclick='checkBonusTask()'>Prüfen</button>
+      <div id='bonusFeedback'></div>
+      <button onclick='showPracticePage()'>Zurück zur Übersicht</button>
+    </div>`;
+  renderLevelNav();
+}
+
+function checkBonusTask(){
+  const raw=document.getElementById("bonusAnswer").value.trim().replace(",",".");
+  const value=parseFloat(raw);
+  const feedback=document.getElementById("bonusFeedback");
+  if(!isNaN(value)&&value>=6.5&&value<=6.9){
+    feedback.innerHTML=`<div style='font-size:28px;font-weight:bold;text-align:center;color:#1b5e20;margin:18px 0;'>🔥 Mega! Bonusaufgabe geschafft! 🔥</div><div style='font-size:22px;text-align:center;'>Du hast dir den Expertenstatus verdient ⭐🚀</div>`;
+    document.body.style.background="linear-gradient(135deg,#7b1fa2,#ffca28,#00e676)";
+  }else{
+    feedback.innerHTML=`<div class='feedback'>Noch nicht richtig. Prüfe deine Rundung nochmal.</div>`;
+  }
+}
+
+function openPracticeTask(n){
+  document.getElementById("levelTitle").innerText=`Übungsmodus - Aufgabe ${n}`;
+  let hint="";
+  if(n===1||n===2){
+    hint=`Trage die Lösungen der Gleichungen ein und prüfe das Ergebnis. Die Reihenfolge der Lösungen ist egal. Brüche werden wie folgt angegeben: z.B -7/3.<br>Gibt es keine Lösung so trage "keine Lösung" in eins der Felder ein.<br>Gibt es nur eine Lösung, so trage nur in ein Feld eine Lösung ein.`;
+  }
+  if(n===10){
+    hint=`Kommen in deiner Lösung Ausdrücke mit Wurzeln vor, kannst du dies wie folgt schreiben: Wurzel(5)+8`;
+  }
+  if(n===4){
+    hint=`Trage die Koordinaten der Scheitelpunkte in die Felder ein. Die Reihenfolge der beiden Scheitelpunkte ist egal.`;
+  }
+  document.getElementById("history").innerHTML=`<div class='worksheet'><div class='worksheetTitle'>Aufgabe ${n} - S. 151/152</div><p>${hint}</p>${practiceHelpButtons(n)}</div>`;
+
+  let html="<div class='inputArea'>";
+  getPracticeLabels(n).forEach(label=>{
+    html+=practiceInput(n,label);
+  });
+  html+=`<button class='darkBtn' onclick='checkPracticeTask(${n})'>Prüfen</button><div id='practiceTaskFeedback'></div><button onclick='showPracticePage()'>Zurück zur Übersicht</button></div>`;
+  document.getElementById("buttons").innerHTML=html;
+}
+
+function practiceHelpButtons(n){
+  if(n===1){
+    return `<button onclick='showPracticeHelp("Die ersten beiden Schritte des Lösungsverfahren sind nicht notwendig bei Aufgabe 1. Du kannst direkt mit dem dritten Schritt starten.")'>Hilfe</button><div id='practiceHelp' class='smallHint'></div>`;
+  }
+  if(n===2){
+    return `<button onclick='showPracticeHelp("Führe die vier Lösungsschritte, welche wir uns erarbeitet haben, durch.")'>Hilfe</button><div id='practiceHelp' class='smallHint'></div>`;
+  }
+  if(n===4){
+    return `<button onclick='showPracticeHelp("Überlege, wie man den Schnittpunkt von zwei Graphen bestimmen kann.")'>Hilfe</button><button onclick='showPracticeHelp("Ansatz für a) (x+2)^2=9. Nun kann die Gleichung gelöst werden.")'>Noch mehr Hilfe</button><div id='practiceHelp' class='smallHint'></div>`;
+  }
+  return "";
+}
+
+function showPracticeHelp(text){
+  const box=document.getElementById("practiceHelp");
+  if(box)box.innerHTML=`<div style='margin-top:10px;padding:10px;background:#eef7ff;border-radius:8px;'>${text}</div>`;
+}
+
+function getSavedPracticeValue(n,label,index){
+  return (practiceAnswers[`${n}_${label}_${index}`] || "").replaceAll("'","&#39;");
+}
+
+function practiceInput(n,label){
+  const key=`${n}_${label}`;
+  let star="";
+  if(completedPracticeSubtasks.has(key))star=" ⭐";
+  else if(partialPracticeSubtasks.has(key))star=" ★½";
+
+  if(n===4){
+    return `
+      <div style='margin:14px 0;padding:10px;background:white;border-radius:10px;'>
+        <div style='font-weight:bold;margin-bottom:8px;'>${label})${star}</div>
+        <span>S₁(</span><input id='practice_${label}_1' value='${getSavedPracticeValue(n,label,1)}' style='width:70px;display:inline-block;'>
+        <span>|</span><input id='practice_${label}_2' value='${getSavedPracticeValue(n,label,2)}' style='width:70px;display:inline-block;'>
+        <span>) und S₂(</span><input id='practice_${label}_3' value='${getSavedPracticeValue(n,label,3)}' style='width:70px;display:inline-block;'>
+        <span>|</span><input id='practice_${label}_4' value='${getSavedPracticeValue(n,label,4)}' style='width:70px;display:inline-block;'>
+        <span>)</span>
+      </div>`;
+  }
+
+  return `
+    <div style='margin:14px 0;padding:10px;background:white;border-radius:10px;'>
+      <div style='font-weight:bold;margin-bottom:8px;'>${label})${star}</div>
+      <input id='practice_${label}_1' value='${getSavedPracticeValue(n,label,1)}' placeholder='Lösung 1' style='width:45%;display:inline-block;'>
+      <span style='margin:0 6px;'>und</span>
+      <input id='practice_${label}_2' value='${getSavedPracticeValue(n,label,2)}' placeholder='Lösung 2' style='width:45%;display:inline-block;'>
+    </div>`;
+}
+
+function normalizeAnswer(value){
+  return value
+    .toLowerCase()
+    .replaceAll(" ","")
+    .replaceAll(",",".")
+    .replaceAll("wurzel","√")
+    .replaceAll("sqrt","√")
+    .replaceAll("(","")
+    .replaceAll(")","");
+}
+
+function savePracticeInputs(n,label,count){
+  for(let i=1;i<=count;i++){
+    const el=document.getElementById(`practice_${label}_${i}`);
+    if(el)practiceAnswers[`${n}_${label}_${i}`]=el.value;
+  }
+}
+
+function scorePair(label,acceptedPairs){
+  const v1=normalizeAnswer(document.getElementById(`practice_${label}_1`).value.trim());
+  const v2=normalizeAnswer(document.getElementById(`practice_${label}_2`).value.trim());
+
+  return acceptedPairs.reduce((best,pair)=>{
+    const a=normalizeAnswer(pair[0]);
+    const b=normalizeAnswer(pair[1]);
+
+    if(b===""){
+      const okSingle=(v1===a&&v2==="")||(v2===a&&v1==="");
+      return Math.max(best,okSingle?1:0);
+    }
+
+    const full=(v1===a&&v2===b)||(v1===b&&v2===a);
+    const half=(v1===a||v1===b||v2===a||v2===b);
+    return Math.max(best,full?1:(half?0.5:0));
+  },0);
+}
+
+function scorePoints(label,acceptedPairs){
+  const values=[1,2,3,4].map(i=>normalizeAnswer(document.getElementById(`practice_${label}_${i}`).value.trim()));
+  return acceptedPairs.reduce((best,pair)=>{
+    const p1=[normalizeAnswer(pair[0][0]),normalizeAnswer(pair[0][1])];
+    const p2=[normalizeAnswer(pair[1][0]),normalizeAnswer(pair[1][1])];
+    const entered1=[values[0],values[1]];
+    const entered2=[values[2],values[3]];
+    const firstMatchesP1=entered1[0]===p1[0]&&entered1[1]===p1[1];
+    const firstMatchesP2=entered1[0]===p2[0]&&entered1[1]===p2[1];
+    const secondMatchesP1=entered2[0]===p1[0]&&entered2[1]===p1[1];
+    const secondMatchesP2=entered2[0]===p2[0]&&entered2[1]===p2[1];
+    const full=(firstMatchesP1&&secondMatchesP2)||(firstMatchesP2&&secondMatchesP1);
+    const half=firstMatchesP1||firstMatchesP2||secondMatchesP1||secondMatchesP2;
+    return Math.max(best,full?1:(half?0.5:0));
+  },0);
+}
+
+function updatePracticeStar(n,label,score){
+  const key=`${n}_${label}`;
+  if(score===1){
+    completedPracticeSubtasks.add(key);
+    partialPracticeSubtasks.delete(key);
+  }else if(score===0.5){
+    if(!completedPracticeSubtasks.has(key))partialPracticeSubtasks.add(key);
+  }else{
+    if(!completedPracticeSubtasks.has(key))partialPracticeSubtasks.delete(key);
+  }
+}
+
+function checkPracticeTask(n){
+  const solutions={
+    1:{
+      e:[["2,3",""]],
+      f:[["6/5","-2/5"]],
+      g:[["keine lösung",""]],
+      h:[["5/4","-7/4"]]
+    },
+    2:{
+      a:[["2","-18"]],
+      d:[["-3","-9"]],
+      g:[["0","-1"]]
+    },
+    10:{
+      a:[["1/5","-3/5"]],
+      b:[["7+√8","7-√8"],["√8+7","-√8+7"],["7+√(8)","7-√(8)"],["√(8)+7","-√(8)+7"],["7+wurzel(8)","7-wurzel(8)"],["wurzel(8)+7","-wurzel(8)+7"]],
+      c:[["-1,5",""]]
+    }
+  };
+
+  let allCorrect=true;
+  let feedback="";
+
+  if(n===4){
+    const pointSolutions={
+      a:[[["1","9"],["-5","9"]]],
+      b:[[["5,5","13"],["-2,5","13"]]]
+    };
+
+    Object.keys(pointSolutions).forEach(label=>{
+      savePracticeInputs(n,label,4);
+      const score=scorePoints(label,pointSolutions[label]);
+      updatePracticeStar(n,label,score);
+      if(score===1){
+        feedback+=`<div class='success'>${label}) richtig ⭐</div>`;
+      }else if(score===0.5){
+        allCorrect=false;
+        feedback+=`<div class='success'>${label}) teilweise richtig ★½</div>`;
+      }else{
+        allCorrect=false;
+        feedback+=`<div class='feedback'>${label}) noch nicht richtig</div>`;
+      }
+    });
+  }else{
+    const task=solutions[n];
+    Object.keys(task).forEach(label=>{
+      savePracticeInputs(n,label,2);
+      const score=scorePair(label,task[label]);
+      updatePracticeStar(n,label,score);
+      if(score===1){
+        feedback+=`<div class='success'>${label}) richtig ⭐</div>`;
+      }else if(score===0.5){
+        allCorrect=false;
+        feedback+=`<div class='success'>${label}) teilweise richtig ★½</div>`;
+      }else{
+        allCorrect=false;
+        feedback+=`<div class='feedback'>${label}) noch nicht richtig</div>`;
+      }
+    });
+  }
+
+  if(allCorrect){
+    feedback+=`<div class='success' style='font-size:20px;margin-top:10px;'>Aufgabe ${n} vollständig geschafft ⭐</div>`;
+  }
+  if(allMainPracticeStarsCollected()&&!extraPracticeUnlocked){
+    extraPracticeUnlocked=true;
+    feedback+=`<div class='success' style='font-size:20px;margin-top:10px;'>Alle bisherigen Sterne gesammelt! Die Bonuskacheln sind jetzt freigeschaltet ✨</div>`;
+  }
+  document.getElementById("practiceTaskFeedback").innerHTML=feedback;
+}
+
+function backToLearningMode(){
+  currentMode="learning";
+  setBackground("learning");
+  setModeBox();
+  levelIndex=0;
+  stepIndex=0;
+  failed=false;
+  reviewMode=false;
+  history=[{eq:levels[0].steps[0].eq,op:null}];
+  renderLevelNav();
+  render();
+}
+function resetLevel(){stepIndex=0;failed=false;reviewMode=false;history=[{eq:levels[levelIndex].steps[0].eq,op:null}];renderLevelNav();render();}
+function restartGame(){currentMode="learning";setBackground("learning");setModeBox();levelIndex=0;stepIndex=0;failed=false;reviewMode=false;worksheetGateShown=false;history=[{eq:levels[0].steps[0].eq,op:null}];renderLevelNav();render();}
+function renderLevelNav(){
+  setModeBox();
+  const nav=document.getElementById("levelNavList");
+  let html="";
+
+  let highestUnlocked=0;
+  if(completedLevels.size>0){
+    highestUnlocked=Math.min(Math.max(...Array.from(completedLevels))+1,levels.length-1);
+  }
+
+  for(let i=0;i<=highestUnlocked;i++){
+    const done=completedLevels.has(i);
+    const active=currentMode==="learning" && i===levelIndex;
+    html+=`<div class='levelItem ${done?'done':''} ${active?'active':''}' onclick='jumpToLevel(${i})'>Level ${i+1}</div>`;
+  }
+
+  if(level9Completed || completedLevels.has(levels.length-1)){
+    html+=`<div class='levelItem ${level9Completed?'done':''} ${currentMode==='level9'?'active':''}' onclick='jumpToLevel(8)'>Level 9</div>`;
+  }
+
+  if(level10Completed || level9Completed){
+    html+=`<div class='levelItem ${level10Completed?'done':''} ${currentMode==='level10'?'active':''}' onclick='jumpToLevel(9)'>Level 10</div>`;
+  }
+
+  nav.innerHTML=html || "Noch kein Level geschafft.";
+}
+
+function jumpToLevel(index){
+  if(index===8 && (level9Completed || completedLevels.has(levels.length-1))){
+    showLevel9();
+    return;
+  }
+
+  if(index===9 && (level10Completed || level9Completed)){
+    showLevel10();
+    return;
+  }
+
+  let highestUnlocked=0;
+  if(completedLevels.size>0){
+    highestUnlocked=Math.min(Math.max(...Array.from(completedLevels))+1,levels.length-1);
+  }
+
+  if(index<0 || index>highestUnlocked)return;
+
+  currentMode="learning";
+  setBackground("learning");
+  setModeBox();
+  levelIndex=index;
+  stepIndex=0;
+  failed=false;
+  reviewMode=false;
+  history=[{eq:levels[levelIndex].steps[0].eq,op:null}];
+  renderLevelNav();
+  render();
+}
+
+function choose(option){
+  if(failed||reviewMode)return;
+  const current=levels[levelIndex].steps[stepIndex];
+  const result=option.correct?current.result:option.result;
+  history[history.length-1].op=option.text;
+  history.push({eq:result,op:null});
+  renderHistory();
+  renderDescriptions();
+  updateProgress();
+
+  if(option.correct){
+    if(levels[levelIndex].collectDescriptions && !descriptions[stepIndex]){
+      askDescription();
+    }else{
+      stepIndex++;
+      render();
+    }
+  }else{
+    failed=true;
+    showWrong(option.msg);
+  }
+}
+
+function showWrong(msg){
+  document.getElementById("buttons").innerHTML=`<div class='feedback'>${msg||"Nicht zielführend."}</div><button class='restart' onclick='resetLevel()'>Neustart</button>`;
+}
+
+function askDescription(){
+  const help=stepIndex===0?`<button onclick='showDescriptionHelp()'>Hilfe</button><div id='helpText' class='smallHint' style='display:none;'>Den konstanten Term auf eine Seite bringen.</div>`:"";
+  document.getElementById("buttons").innerHTML=`<div class='inputArea'><p><b>Beschreibe den gemachten Schritt. Verallgemeinere dabei die Beschreibung, sodass sie auch für andere Gleichungen dieser Art gültig ist.</b></p>${help}<input id='inputDesc' oninput='toggleDescriptionButton()'><button id='descNextBtn' class='darkBtn' onclick='saveDescription()' disabled>Weiter</button></div>`;
+}
+
+function showDescriptionHelp(){
+  const help=document.getElementById("helpText");
+  if(help)help.style.display="block";
+}
+
+function toggleDescriptionButton(){
+  const input=document.getElementById("inputDesc");
+  const btn=document.getElementById("descNextBtn");
+  if(btn&&input)btn.disabled=input.value.trim().length===0;
+}
+
+function saveDescription(){
+  const input=document.getElementById("inputDesc");
+  const value=input.value.trim();
+  if(value.length===0)return;
+  descriptions[stepIndex]=value;
+  stepIndex++;
+  render();
+}
+
+function renderHistory(){
+  let html="";
+  history.forEach(item=>{
+    html+=`<div class='eqline'><span>${item.eq}</span><span class='operation'>${item.op?"| "+item.op:""}</span></div>`;
+  });
+  document.getElementById("history").innerHTML=html;
+}
+
+function renderDescriptions(){
+  const panel=document.getElementById("rightPanel");
+  const desc=document.getElementById("desc");
+  if(levelIndex===0&&descriptions.length===0){
+    panel.style.display="none";
+    desc.innerHTML="";
+    return;
+  }
+  panel.style.display="block";
+  if(descriptions.length===0){
+    desc.innerHTML=`<p class='smallHint'>Ab Level 2 sammelst du hier deine Beschreibungen.</p>`;
+    return;
+  }
+  desc.innerHTML=descriptions.map((d,i)=>d?`<div class='descItem'>${i+1}. ${d}</div>`:"").join("");
+}
+
+function updateProgress(){
+  const total=levels[levelIndex]?levels[levelIndex].steps.length:1;
+  document.getElementById("bar").style.width=Math.min((stepIndex/total)*100,100)+"%";
+}
+
+function render(){
+  currentMode="learning";
+  renderHistory();
+  renderDescriptions();
+  updateProgress();
+  const currentLevel=levels[levelIndex];
+  const current=currentLevel.steps[stepIndex];
+  document.getElementById("levelTitle").innerText=currentLevel.title;
+  const buttons=document.getElementById("buttons");
+  buttons.innerHTML="";
+
+  if(stepIndex>=currentLevel.steps.length){
+    showLevelReview();
+    return;
+  }
+
+  buttons.innerHTML=`<div class='prompt'>Welche Äquivalenzumformung soll durchgeführt werden?</div>`;
+  const options=shuffle([{text:current.correctOp,correct:true},...current.wrongs.map(w=>({text:w.op,correct:false,result:w.result,msg:w.msg}))]);
+  options.forEach(o=>{
+    const b=document.createElement("button");
+    b.innerText=o.text;
+    b.onclick=()=>choose(o);
+    buttons.appendChild(b);
+  });
+  renderLevelNav();
+}
+
+function showLevelReview(){
+  reviewMode=true;
+  completedLevels.add(levelIndex);
+  renderLevelNav();
+  document.getElementById("bar").style.width="100%";
+
+  if(levelIndex===4&&!worksheetGateShown){
+    worksheetGateShown=true;
+    document.getElementById("buttons").innerHTML=`<div class='inputArea'><div style="font-size:26px;font-weight:bold;text-align:center;margin:10px 0;">Alle Level geschafft 🎉</div><div class="finishBig">Fülle nun das Arbeitsblatt aus</div><button class='restart' onclick='restartGame()'>Nochmal spielen</button><button class='darkBtn' onclick='startLevel6()'>Arbeitsblatt ist ausgefüllt</button></div>`;
+    return;
+  }
+
+  if(levelIndex===7){
+    document.getElementById("buttons").innerHTML=`<div class='specialHint'>Achtung: Das ist ein besonderer Fall mit nur einer Lösung.</div><button class='darkBtn' onclick='continueAfterReview()'>Weiter</button>`;
+    return;
+  }
+
+  if(levelIndex>=5){
+    document.getElementById("buttons").innerHTML=`<button class='darkBtn' onclick='continueAfterReview()'>Weiter</button>`;
+    return;
+  }
+
+  if(levelIndex>=1){
+    document.getElementById("buttons").innerHTML=`<div class='inputArea'><p><b>Passt die Beschreibung rechts noch oder möchtest du sie ändern?</b></p><button class='darkBtn' onclick='continueAfterReview()'>Passt so</button><button onclick='editDescriptions()'>Beschreibung ändern</button></div>`;
+  }else{
+    document.getElementById("buttons").innerHTML=`<button class='darkBtn' onclick='nextLevel()'>Nächstes Level</button>`;
+  }
+}
+
+function startLevel6(){
+  levelIndex=5;
+  stepIndex=0;
+  failed=false;
+  reviewMode=false;
+  history=[{eq:levels[levelIndex].steps[0].eq,op:null}];
+  renderLevelNav();
+  render();
+}
+
+function editDescriptions(){
+  const values=descriptions.length?descriptions:defaultDescriptions;
+  let inputs="";
+  for(let i=0;i<4;i++){
+    inputs+=`<label>${i+1}.<input id='edit${i}' value='${values[i]||""}'></label>`;
+  }
+  document.getElementById("buttons").innerHTML=`<div class='inputArea'><p><b>Ändere deine Beschreibung:</b></p>${inputs}<button class='darkBtn' onclick='saveEditedDescriptions()'>Speichern und weiter</button></div>`;
+}
+
+function saveEditedDescriptions(){
+  descriptions=[];
+  for(let i=0;i<4;i++){
+    const value=document.getElementById("edit"+i).value.trim();
+    descriptions[i]=value||defaultDescriptions[i];
+  }
+  renderDescriptions();
+  continueAfterReview();
+}
+
+function continueAfterReview(){
+  if(levelIndex>=levels.length-1){
+    showLevel9();
+    return;
+  }
+  nextLevel();
+}
+
+function nextLevel(){
+  levelIndex++;
+  stepIndex=0;
+  failed=false;
+  reviewMode=false;
+  history=[{eq:levels[levelIndex].steps[0].eq,op:null}];
+  renderLevelNav();
+  render();
+}
+
+function showLevel9(){
+  currentMode="level9";
+  reviewMode=true;
+  document.getElementById("levelTitle").innerText="Level 9 - Ordne jeder Gleichung ihre Lösungen zu.";
+  document.getElementById("bar").style.width="100%";
+  document.getElementById("rightPanel").style.display="none";
+  document.getElementById("history").innerHTML=`<div class='worksheet'><div class='worksheetTitle'>7 a) ☒ Ordne jeder Gleichung ihre Lösungen zu.</div><div class='pieces'><div class='piece orange' style='--rot:3deg'>(x − 7)² = 7 <span class='letterBubble'>A</span></div><div class='piece blue' style='--rot:-3deg'>(x + 7)² = 7 <span class='letterBubble'>B</span></div><div class='piece green' style='--rot:-3deg'>(x − √7)² = 7 <span class='letterBubble'>C</span></div><div class='piece yellow' style='--rot:0deg'><span class='bubble'>1</span>x₁ = √7 − 7; x₂ = −√7 − 7</div><div class='piece red' style='--rot:3deg'><span class='bubble'>2</span>x₁ = √7 + 7; x₂ = −√7 + 7</div><div class='piece gray' style='--rot:-3deg'><span class='bubble'>3</span>x₁ = 2 · √7; x₂ = 0</div></div></div>`;
+  document.getElementById("buttons").innerHTML=`<div class='inputArea'><div class='matchRow'><label>A -</label><input id='ansA'></div><div class='matchRow'><label>B -</label><input id='ansB'></div><div class='matchRow'><label>C -</label><input id='ansC'></div><button class='darkBtn' onclick='checkLevel9()'>Prüfen</button><div id='matchFeedback'></div></div>`;
+  renderLevelNav();
+}
+
+function checkLevel9(){
+  const a=document.getElementById("ansA").value.trim();
+  const b=document.getElementById("ansB").value.trim();
+  const c=document.getElementById("ansC").value.trim();
+  const fb=document.getElementById("matchFeedback");
+  if(a==="2"&&b==="1"&&c==="3"){
+    level9Completed=true;
+    renderLevelNav();
+    fb.innerHTML=`<div class='success'>Richtig! Sehr gut zugeordnet 🎉</div><button class='darkBtn' onclick='showLevel10()'>Weiter zu Level 10</button><button class='restart' onclick='restartGame()'>Nochmal spielen</button>`;
+  }else{
+    fb.innerHTML=`<div class='feedback'>Noch nicht richtig. Probiere es nochmal.</div>`;
+  }
+}
+
+function showLevel10(){
+  currentMode="level10";
+  reviewMode=true;
+  document.getElementById("levelTitle").innerText="Level 10 - Graphische Bedeutung erkennen.";
+  document.getElementById("bar").style.width="100%";
+  document.getElementById("rightPanel").style.display="none";
+  document.getElementById("history").innerHTML=`<div class='worksheet'><div class='worksheetTitle'>Was beschreibt die Gleichung</div><div style='font-size:24px;font-weight:bold;text-align:center;margin:16px 0;'>3·(x+2)² - 27 = 4</div><div style='font-size:20px;text-align:center;'>graphisch?</div></div>`;
+  document.getElementById("buttons").innerHTML=`<div class='prompt'>Wähle die passende Beschreibung aus.</div><button onclick='checkLevel10(false)'>a) Schnittpunkt von einer Normalparabel und einer konstanten Funktion</button><button onclick='checkLevel10(false)'>b) Schnittpunkt von zwei linearen Funktionen</button><button onclick='checkLevel10(false)'>c) Schnittpunkt einer gestreckten Normalparabel und einer linearen Funktion</button><button onclick='checkLevel10(true)'>d) Schnittpunkt einer quadratischen Funktion und einer konstanten Funktion</button><div id='level10Feedback'></div>`;
+  renderLevelNav();
+}
+
+function checkLevel10(correct){
+  const fb=document.getElementById("level10Feedback");
+  if(correct){
+    level10Completed=true;
+    renderLevelNav();
+    fb.innerHTML=`<div class='success'>Richtig! Links steht eine quadratische Funktion, rechts eine konstante Funktion.</div><button class='darkBtn' onclick='showFinalCongrats()'>Fertig</button><button class='restart' onclick='restartGame()'>Nochmal spielen</button>`;
+  }else{
+    fb.innerHTML=`<div class='feedback'>Noch nicht richtig. Probiere es nochmal.</div>`;
+  }
+}
+
+function showFinalCongrats(){
+  currentMode="final";
+  setBackground("learning");
+  document.getElementById("levelTitle").innerText="Fertig 🎉";
+  document.getElementById("bar").style.width="100%";
+  document.getElementById("rightPanel").style.display="none";
+  document.getElementById("history").innerHTML=`<div class='worksheet'><div style='font-size:30px;font-weight:bold;text-align:center;margin:12px 0;color:#1b5e20;'>Herzlichen Glückwunsch!</div><div style='font-size:22px;text-align:center;line-height:1.5;'>Du hast erstmal alle Level geschafft.<br>Du bist besonders gut und schnell!</div></div>`;
+  document.getElementById("buttons").innerHTML=`<button class='restart' onclick='restartGame()'>Nochmal spielen</button>`;
+  renderLevelNav();
+}
+
 resetLevel();
 </script>
 </body>
