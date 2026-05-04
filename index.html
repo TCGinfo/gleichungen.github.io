@@ -698,8 +698,8 @@ function showWrong(msg){
 }
 
 function askDescription(){
-  const help=stepIndex===0?`<button onclick='showDescriptionHelp()'>Hilfe</button><div id='helpText' class='smallHint' style='display:none;'>Den konstanten Term auf eine Seite bringen.</div>`:"";
-  document.getElementById("buttons").innerHTML=`<div class='inputArea'><p><b>Beschreibe den gemachten Schritt. Verallgemeinere dabei die Beschreibung, sodass sie auch für andere Gleichungen dieser Art gültig ist.</b></p>${help}<input id='inputDesc' oninput='toggleDescriptionButton()'><button id='descNextBtn' class='darkBtn' onclick='saveDescription()' disabled>Weiter</button></div>`;
+  const help=stepIndex===0?`<button onclick='showDescriptionHelp()'>Hilfe</button><div id='helpText' class='smallHint' style='display:none;'>Zum Beispiel: Den konstanten Term auf eine Seite bringen.</div>`:"";
+  document.getElementById("buttons").innerHTML=`<div class='inputArea'>${stepIndex===0?`<p><b>Wir wollen nun eine Anleitung für das Lösungsverfahren schreiben.</b></p>`:""}<p><b>Beschreibe den gemachten Schritt. Verallgemeinere dabei die Beschreibung, sodass sie auch für andere Gleichungen dieser Art gültig ist.</b></p>${help}<input id='inputDesc' oninput='toggleDescriptionButton()'><button id='descNextBtn' class='darkBtn' onclick='saveDescription()' disabled>Weiter</button></div>`;
 }
 
 function showDescriptionHelp(){
